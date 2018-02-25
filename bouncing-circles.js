@@ -42,5 +42,11 @@ function draw() {
       circle.yd = -circle.yd;
 			circle.r -= 3
     }
+		//reset location and size when circle dissapears
+		if (circle.r <= 0) {
+			circle.x = random(0,width);
+			circle.y = random(0,height);
+			circle.r = random(10,40)
+		}
   }
 }
