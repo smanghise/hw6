@@ -20,7 +20,7 @@ function setup() {
 function draw() {
   background(0);
   noStroke();
-
+  
   for (var index = 0; index < 100; index = index + 1) {
     // get circle object
     var circle = circles[index];
@@ -35,10 +35,14 @@ function draw() {
 
     // check boundaries and update directions
     if (circle.x > width || circle.x < 0) {
+      //triangle flashes when circle hits x boundary
+      triangle(30, 75, 58, 20, 86, 75);
       circle.xd = -circle.xd;
 			circle.r -= 3
     }
     if (circle.y > height || circle.y < 0) {
+      //triangle flashes when circle hits y boundary
+      triangle(30, 75, 58, 20, 86, 75);
       circle.yd = -circle.yd;
 			circle.r -= 3
     }
