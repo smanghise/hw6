@@ -12,7 +12,7 @@ var player1 = {
   y: 200,
   ht: 50,
   wd: 10,
-	score: 0
+  score: 0
 };
 
 var player2 = {
@@ -30,6 +30,9 @@ function setup() {
 
 function draw() {
   background(255);
+	
+	player_1_score();
+	player_2_score();
   
   // draw puck
   ellipse(puck.x, puck.y, puck.r*2);
@@ -70,9 +73,9 @@ function draw() {
     // check if puck is within paddle height...
     if (puck.y > player1.y && puck.y < player1.y + player1.ht) {
       puck.xSpeed = abs(puck.xSpeed);
+			player1.score += 1;
     } else {
-      puck.xSpeed = puck.xSpeed;
-      player2.score += 1
+
     }
   }
   
@@ -81,9 +84,9 @@ function draw() {
     // check if puck is within paddle height...
     if (puck.y > player2.y && puck.y < player2.y + player2.ht) {
       puck.xSpeed = -abs(puck.xSpeed);
+			player2.score +=1;
     } else {
-      puck.xSpeed = puck.xSpeed;
-      player1.score +=1
+
     }
   }
 }
@@ -116,4 +119,16 @@ function keyReleased() {
   } else if (keyCode == UP_ARROW) {
     player2.paddleUp = false;
   }
+}
+
+func player_1_score() {
+  fill(255);
+  textSize(20);
+  text('Player 1:' + player1.score);
+}
+
+func player_2_score() {
+  fill(255);
+  textSize(20);
+  text('Player 2:' + player2.score);
 }
