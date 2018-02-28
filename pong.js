@@ -124,11 +124,11 @@ function keyReleased() {
 func player_1_score() {
   fill(255);
   textSize(20);
-  text('Player 1:' + player1.score);
+  text('Player 1:' + player1.score,100,100);
 }
 
 func player_2_score() {
   fill(255);
   textSize(20);
-  text('Player 2:' + player2.score);
+  text('Player 2:' + player2.score,300,100);
 }
